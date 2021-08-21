@@ -1,0 +1,46 @@
+{
+  "name": "ts-boilerplate",
+  "sideEffects": false,
+  "version": "0.0.1",
+  "description": "",
+  "module": "module/index.js",
+  "main": "lib/index.js",
+  "types": "module/index.d.ts",
+  "source": "./src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "yarn clean && tsc --declaration --module es2015 --outdir module && tsc --module commonjs --outdir lib && yarn build-deno",
+    "clean": "rm -rf lib && rm -rf module && rm -rf deno_lib",
+    "doc": "typedoc src/index.ts",
+    "build-deno": "denoify",
+    "release": "yarn build && standard-version"
+  },
+  "keywords": [
+    "js",
+    "promise",
+    "typescript"
+  ],
+  "license": "ISC",
+  "author": "Zixuan Chen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxch3n/ts-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zxch3n/ts-boilerplate/issues"
+  },
+  "homepage": "https://github.com/zxch3n/ts-boilerplate#readme",
+  "devDependencies": {
+    "@types/chance": "^1.1.1",
+    "@types/jest": "^26.0.20",
+    "chance": "^1.1.7",
+    "denoify": "^0.6.5",
+    "jest": "^26.6.3",
+    "prettier": "^2.3.2",
+    "standard-version": "^9.3.0",
+    "ts-jest": "^26.5.2",
+    "ts-node": "^9.1.1",
+    "typedoc": "^0.20.28",
+    "typescript": "^4.2.2"
+  }
+}
