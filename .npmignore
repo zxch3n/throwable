@@ -5,3 +5,4 @@ docs/
 .github/
 jest.config.js
 coverage/
+deno_lib/
