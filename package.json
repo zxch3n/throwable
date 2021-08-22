@@ -1,8 +1,8 @@
 {
-  "name": "throwable",
+  "name": "@typ3/throwable",
   "sideEffects": false,
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "🦾 A type-safe way to express error",
   "module": "module/index.js",
   "main": "lib/index.js",
   "types": "module/index.d.ts",
@@ -24,12 +24,12 @@
   "author": "Zixuan Chen",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zxch3n/ts-boilerplate.git"
+    "url": "git+https://github.com/zxch3n/throwable.git"
   },
   "bugs": {
-    "url": "https://github.com/zxch3n/ts-boilerplate/issues"
+    "url": "https://github.com/zxch3n/throwable/issues"
   },
-  "homepage": "https://github.com/zxch3n/ts-boilerplate#readme",
+  "homepage": "https://github.com/zxch3n/throwable#readme",
   "devDependencies": {
     "@types/chance": "^1.1.1",
     "@types/jest": "^26.0.20",
