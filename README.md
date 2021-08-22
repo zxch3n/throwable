@@ -39,6 +39,32 @@ function aDivBDivB(a: number, b: number): Throwable<number, 'divZero'> {
 
 ## Usage
 
+Install
+```
+yarn add @typ3/throwable
+```
+
+Basic usage
+```ts
+import {Ok, Err, Throwable} from '@typ3/throwable'
+// in deno
+import {Ok, Err, Throwable} from 'https://deno.land/x/throwable'
+
+function parse(input: string): Throwable<string[], 'invalid'> {
+  const ans = []
+  if (!input.startsWith('{')) {
+    // Rather than `throw new Error()`
+    return Err('invalid');
+  }
+
+  ...
+
+  return Ok(ans);
+}
+
+```
+
+
 Throwable interface
 
 ```ts
