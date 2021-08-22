@@ -1,6 +1,9 @@
-# Throwable
+# Throwable 
+
 
 > A type-safe way to handle Error in TypeScript
+
+[![codecov](https://codecov.io/gh/zxch3n/throwable/branch/master/graph/badge.svg?token=YPRRWO1EDZ)](https://codecov.io/gh/zxch3n/throwable)
 
 <details>
 <summary>Why </summary>
