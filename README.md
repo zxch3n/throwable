@@ -48,7 +48,7 @@ Basic usage
 ```ts
 import {Ok, Err, Throwable} from '@typ3/throwable'
 // in deno
-import {Ok, Err, Throwable} from 'https://deno.land/x/throwable'
+import {Ok, Err, Throwable} from 'https://deno.land/x/throwable@v0'
 
 function parse(input: string): Throwable<string[], 'invalid'> {
   const ans = []
