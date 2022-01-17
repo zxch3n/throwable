@@ -1,7 +1,7 @@
 {
   "name": "@typ3/throwable",
   "sideEffects": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "🦾 A type-safe way to express error",
   "module": "module/index.js",
   "main": "lib/index.js",
