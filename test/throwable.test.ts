@@ -1,4 +1,4 @@
-import { Err, isThrowable, Ok } from '../src';
+import { Err, isThrowable, Ok, Throwable } from '../src';
 
 describe('Throwable', () => {
   it('basic', () => {
@@ -27,5 +27,12 @@ describe('Throwable', () => {
   it('unwrap', () => {
     expect(Ok(10).unwrap()).toBe(10);
     expect(() => Err('err').unwrap()).toThrow('err');
+  });
+
+  it('with undefined', () => {
+    let t: Throwable = Ok();
+    expect(t.isOk).toBeTruthy();
+    t = Err();
+    expect(t.isOk).toBeFalsy();
   });
 });
