@@ -1,18 +1,22 @@
-export class Throwable<TReturn, TError> {
-  #ok: boolean = true;
-  #err?: TError;
-  #val?: TReturn;
+export class Throwable<TReturn = undefined, TError = undefined> {
+  private _ok: boolean = true;
+  private _err?: TError;
+  private _val?: TReturn;
   private constructor(ok: boolean, err?: TError, val?: TReturn) {
-    this.#ok = ok;
-    this.#err = err;
-    this.#val = val;
+    this._ok = ok;
+    this._err = err;
+    this._val = val;
   }
 
-  static Ok<TReturn, TError = any>(v: TReturn): Throwable<TReturn, TError> {
+  static Ok<TReturn = undefined, TError = any>(
+    v?: TReturn,
+  ): Throwable<TReturn, TError> {
     return new Throwable<TReturn, TError>(true, undefined, v);
   }
 
-  static Err<TError, TReturn = any>(err: TError): Throwable<TReturn, TError> {
+  static Err<TError = undefined, TReturn = any>(
+    err?: TError,
+  ): Throwable<TReturn, TError> {
     return new Throwable<TReturn, TError>(false, err);
   }
 
@@ -20,21 +24,21 @@ export class Throwable<TReturn, TError> {
    * return the concrete error if it is an error
    */
   get error(): TError | undefined {
-    return this.#err;
+    return this._err;
   }
   /**
    * return the value if it is not an error
    */
   get value(): TReturn | undefined {
-    return this.#val;
+    return this._val;
   }
 
   get isOk(): boolean {
-    return this.#ok;
+    return this._ok;
   }
 
   get isError(): boolean {
-    return !this.#ok;
+    return !this._ok;
   }
 
   /**
@@ -73,7 +77,7 @@ export class Throwable<TReturn, TError> {
     if (this.isOk) {
       return this.value!;
     } else {
-      throw this.#err;
+      throw this._err;
     }
   }
 }
